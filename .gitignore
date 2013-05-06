@@ -1,4 +1,5 @@
 *.py[cod]
+nohup.out
 
 # C extensions
 *.so

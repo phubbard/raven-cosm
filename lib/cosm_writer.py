@@ -3,6 +3,7 @@ from observer import *
 import requests
 import json
 import os
+import sys
 
 class CosmWriter(Subject, Observer):
 
