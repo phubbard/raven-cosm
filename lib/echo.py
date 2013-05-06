@@ -1,5 +1,6 @@
 from subject import *
 from observer import *
+import sys
 
 class Echo(Subject, Observer):
 
@@ -11,6 +12,7 @@ class Echo(Subject, Observer):
 
     def update(self, subject, message):
         print message,
+        sys.stdout.flush()
         self.notify(message)
 
 
