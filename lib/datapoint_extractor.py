@@ -43,7 +43,7 @@ class DatapointExtractor(Subject, Observer):
         divisor = self.extract_field('Divisor', message)
         if seconds_since_2000 and demand and multiplier and divisor:
             self.notify({"at": self.convert_to_gmt(seconds_since_2000),
-                         "value": 1000.0 * demand * multiplier / divisor})
+                         "value": str(1000.0 * demand * multiplier / divisor}))
         
     # a typical field in xml is:
     #   <FieldName>0x12345abcd</FieldName>
