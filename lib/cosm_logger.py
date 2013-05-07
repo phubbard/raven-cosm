@@ -11,7 +11,7 @@ cos = cosm_writer.CosmWriter()
 ech = echo.Echo()
 
 # usb.attach(idx).attach(dpx).attach(cos).attach(ech)
-usb.attach(idx).attach(dpx).attach(cos)
+usb.attach(ech).attach(idx).attach(dpx).attach(cos)
 usb.start()
 usb.thread.join()
 

@@ -17,8 +17,9 @@ class CosmWriter(Subject, Observer):
     # support for observer
 
     def update(self, subject, message):
+        body = {"datapoints":[message]}
         r = requests.post(self.API_PREFIX + '/feeds/' + self.FEED_ID + '/datastreams/1/datapoints.json',
-                          data=json.dumps(message),
+                          data=json.dumps(body),
                           headers = {'X-ApiKey': self.cosm_api_key()})
         if r.status_code >= 300:
             sys.stderr.write("Error:" + r.content + "\n")

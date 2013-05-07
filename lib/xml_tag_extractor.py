@@ -52,10 +52,6 @@ class XMLTagExtractor(Subject, Observer):
             # m.group(2) is anything following it.
             self.collected_fragment += m.group(1)
             self.xml_input = m.group(2)
-            self.print_err("found closing tag_name, trailing input = " + self.xml_input)
             self.state = 0
             self.notify(self.collected_fragment)
-
-    def print_err(self, *args):
-        sys.stderr.write(' '.join(map(str,args)) + '\n')
 
