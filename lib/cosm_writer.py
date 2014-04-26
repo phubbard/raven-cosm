@@ -10,9 +10,10 @@ class CosmWriter(Subject, Observer):
     def __init__(self):
         Subject.__init__(self)
         Observer.__init__(self)
-        
-    API_PREFIX='http://api.cosm.com/v2'
-    FEED_ID='129722'
+
+    #API_PREFIX='http://api.cosm.com/v2'
+    API_PREFIX = 'https://api.xively.com/v2'
+    FEED_ID='571033480'
 
     # support for observer
 

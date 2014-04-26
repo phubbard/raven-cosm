@@ -11,7 +11,7 @@ class USBIO(Subject, Observer):
     separate thread.
     """
 
-    def __init__(self, port="/dev/ttyUSB0", baud=115200):
+    def __init__(self, port="/dev/cu.usbserial-004013FA", baud=115200):
         Subject.__init__(self)
         Observer.__init__(self)
         self.serial = serial.Serial(port, baud)
@@ -36,5 +36,3 @@ class USBIO(Subject, Observer):
         while threading.current_thread() == self.thread:
             line = self.serial.readline()
             self.notify(line)
-            
-
